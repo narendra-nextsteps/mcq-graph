@@ -13,24 +13,23 @@ def get_superadmin_dashboard_query():
 
     """
     return """
-LET tasks = (
-    FOR task_doc in {task_collection}
-    RETURN {{
-            chapter_key: task_doc.chapter_key,
-            chapter: task_doc.chapter,
-            assigned_to: task_doc.assigned_to,
-            completed_time: task_doc.completed_time,
-            status:task_doc.status
-        }}
-    )
-RETURN {{
-    tasks: tasks,
-    is_successful_execution: true
-}}
-
-        """.format(
-            task_collection=_db_nomenclature.TASK_COLLECTION
+        LET tasks = (
+        FOR task_doc in {task_collection}
+        RETURN {{
+                chapter_key: task_doc.chapter_key,
+                chapter: task_doc.chapter,
+                assigned_to: task_doc.assigned_to,
+                completed_time: task_doc.completed_time,
+                status:task_doc.status
+            }}
         )
+        RETURN {{
+            tasks: tasks,
+            is_successful_execution: true
+        }}
+    """.format(
+        task_collection=_db_nomenclature.TASK_COLLECTION
+    )
 
 
 def get_superadmin_dashboard_query_response():
