@@ -1,0 +1,72 @@
+LET assigned_by = "1202662"
+LET assigned_to_list = ['424', '4678', '7686']
+LET chapter_key = "1202662"
+LET num_one_less_assigned_to = LENGTH(assigned_to_list) - 1
+
+LET chapter_doc = DOCUMENT(CONCAT("Chapters/", chapter_key))
+LET is_previously_locked = !IS_NULL(chapter_doc.locked_to)
+
+LET tasks = (
+    FOR assigned_to_pos in 0..num_one_less_assigned_to
+        FILTER assigned_to_list[assigned_to_pos] != chapter_doc.locked_to
+        INSERT {
+            status: assigned_to_pos == 0 ? (
+                is_previously_locked ? 'NOT_YET_ASSIGNED' : 'PENDING'
+            ) : 'NOT_YET_ASSIGNED',
+            assigned_to: assigned_to_list[assigned_to_pos],
+            assigned_by: assigned_by,
+            chapter_key: chapter_key,
+            chapter: chapter_doc.chapter,
+            assigned_time: DATE_ISO8601(DATE_NOW())
+        } IN Tasks
+        RETURN NEW
+)
+
+LET updated_chapter_doc = (
+    FILTER !is_previously_locked
+    UPDATE chapter_doc WITH {
+        locked_to: assigned_to_list[0]
+    } IN Chapters
+    RETURN NEW
+)
+
+LET need_to_create_subtasks = tasks[0].status == 'PENDING'
+
+LET locked_concepts = (
+    FILTER need_to_create_subtasks
+    FOR concept_doc in CurationConcepts
+        FILTER POSITION(
+            concept_doc.chapter_keys, chapter_key
+        ) and IS_NULL(concept_doc.locked_to)
+        UPDATE concept_doc WITH {
+            locked_to: assigned_to_list[0]
+        } IN CurationConcepts
+        RETURN {
+            key: concept_doc._key,
+            name: concept_doc.concept_name,
+            assigned_to: assigned_to_list[0]
+        }
+)
+
+
+LET sub_tasks = (
+    FILTER need_to_create_subtasks
+    FOR concept in locked_concepts
+        INSERT {
+            task_key: tasks[0]._key,
+            concept_key: concept.key,
+            concept_name: concept.name,
+            status: 'PENDING',
+            assigned_time: DATE_ISO8601(DATE_NOW())
+        } IN SubTasks
+        RETURN NEW
+)
+
+
+RETURN {
+    is_previously_locked: is_previously_locked,
+    tasks: tasks,
+    sub_tasks: sub_tasks,
+    locked_concepts: locked_concepts,
+    is_successful_execution: true
+}

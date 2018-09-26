@@ -1,0 +1,116 @@
+LET chapter_key = "1202662"
+LET username = "a"
+
+LET aborted_task = (
+    FOR task in Tasks
+        FILTER task.chapter_key == chapter_key AND task.status == "PENDING" AND task.assigned_to == username
+        UPDATE task WITH {
+            status: "ABORTED"
+        } IN Tasks
+        RETURN NEW
+)[0]
+
+LET aborted_sub_tasks = (
+    FOR subtask in SubTasks
+        FILTER subtask.task_key == aborted_task.task_key
+        UPDATE subtask WITH {
+            status: "ABORTED"
+        } IN SubTasks
+        RETURN NEW
+)
+
+LET concepts_locked_to_aborted_task = (
+    FOR aborted_sub_task in aborted_sub_tasks
+        UPDATE { _key: aborted_sub_task.concept_key } WITH {
+            locked_to: NULL
+        } IN CurationConcepts
+        RETURN NEW
+)
+
+LET aborted_chapter = (
+    UPDATE { _key: chapter_key } WITH {
+        locked_to: NULL
+    } IN Chapters
+    RETURN NEW
+)[0]
+
+RETURN {
+    aborted_task: aborted_task,
+    aborted_sub_tasks: aborted_sub_tasks,
+    aborted_chapter: aborted_chapter,
+    concepts_locked_to_aborted_task: concepts_locked_to_aborted_task
+}
+
+// after abort task assign to next username
+
+
+LET aborted_task= {
+      "_key": "2271653",
+      "_id": "Tasks/2271653",
+      "_rev": "_XCtbxQO--_",
+      "status": "ABORTED",
+      "assigned_to": "a",
+      "assigned_by": "A",
+      "chapter_key": "1202662",
+      "assigned_time": "2018-06-29T12:38:32.134Z",
+      "completed_time": "2018-06-29T12:39:36.266Z"
+    }
+
+LET next_user_task = (
+    FOR task IN Tasks
+        FILTER task.chapter_key == aborted_task.chapter_key AND task.status == 'NOT_YET_ASSIGNED'
+        SORT task._key
+        LIMIT 1
+        RETURN task
+)[0]
+
+LET need_to_create_subtasks = !IS_NULL(next_user_task)
+
+LET updated_next_user_task = (
+    FILTER need_to_create_subtasks
+    UPDATE next_user_task WITH { status: 'PENDING' } IN Tasks
+    RETURN NEW
+)[0]
+
+LET updated_chapter = (
+    FILTER need_to_create_subtasks
+    UPDATE { _key: aborted_task.chapter_key } WITH {
+        locked_to: updated_next_user_task.assigned_to
+    } In Chapters
+    RETURN NEW
+)[0]
+
+LET newly_locked_concepts = (
+    FILTER need_to_create_subtasks
+    FOR concept_doc in CurationConcepts
+        FILTER POSITION(concept_doc.chapter_keys, aborted_task.chapter_key) AND IS_NULL(concept_doc.locked_to)
+        UPDATE concept_doc WITH {
+            locked_to: updated_next_user_task.assigned_to
+        } IN CurationConcepts
+        RETURN {
+            key: concept_doc._key,
+            name: concept_doc.concept_name
+            assigned_to: updated_next_user_task.assigned_to
+        }
+)
+
+LET next_user_sub_tasks = (
+    FILTER need_to_create_subtasks
+    FOR concept in newly_locked_concepts
+        INSERT {
+            task_key: next_user_task._key,
+            concept_key: concept.key,
+            concept_name: concept.name,
+            status: 'PENDING',
+            assigned_time: DATE_ISO8601(DATE_NOW())
+        } IN SubTasks
+        RETURN NEW
+)
+
+RETURN {
+    updated_next_user_task: updated_next_user_task,
+    updated_chapter: updated_chapter,
+    need_to_create_subtasks: need_to_create_subtasks,
+    next_user_sub_tasks: next_user_sub_tasks,
+    newly_locked_concepts: newly_locked_concepts
+}

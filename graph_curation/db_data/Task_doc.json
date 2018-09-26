@@ -1,0 +1,26 @@
+[
+  {
+    "chapter_key": "Chapter/825005",
+    "assigned_by": "100",
+    "assigned_to": "101",
+    "assigned_time": "2018-02-21T07:34:05.920285Z",
+    "completed_time": "2018-02-21T07:34:05.920285Z",
+    "status": "COMPLETED"
+  },
+  {
+    "chapter_key": "Chapter/825005",
+    "assigned_by": "100",
+    "assigned_to": "102",
+    "assigned_time": "2018-02-21T07:34:05.920285Z",
+    "completed_time": "2018-02-21T07:34:05.920285Z",
+    "status": "COMPLETED"
+  },
+  {
+    "chapter_key": "Chapter/825005",
+    "assigned_by": "100",
+    "assigned_to": "103",
+    "assigned_time": "2018-02-21T07:34:05.920285Z",
+    "completed_time": "2018-02-21T07:34:05.920285Z",
+    "status": "PENDING"
+  }
+]

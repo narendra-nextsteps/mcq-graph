@@ -1,0 +1,44 @@
+[
+  {
+    "book": "NCERT",
+    "standard": "10",
+    "subject": "SCIENCE",
+    "chapter": "1:Chemical Reactions and Equations"
+  },
+  {
+    "book": "NCERT",
+    "standard": "10",
+    "subject": "SCIENCE",
+    "chapter": "10:Light – Reflection and Refraction"
+  },
+  {
+    "book": "NCERT",
+    "standard": "10",
+    "subject": "SCIENCE",
+    "chapter": "11:The Human Eye and the Colourful World"
+  },
+  {
+    "book": "NCERT",
+    "standard": "10",
+    "subject": "SCIENCE",
+    "chapter": "12:Electricity"
+  },
+  {
+    "book": "NCERT",
+    "standard": "10",
+    "subject": "SCIENCE",
+    "chapter": "13:Magnetic Effects of Electric Current"
+  },
+  {
+    "book": "NCERT",
+    "standard": "10",
+    "subject": "SCIENCE",
+    "chapter": "14:Sources of Energy"
+  },
+  {
+    "book": "NCERT",
+    "standard": "10",
+    "subject": "SCIENCE",
+    "chapter": "15:Our Environment"
+  }
+]

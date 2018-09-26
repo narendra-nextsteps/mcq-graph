@@ -1,0 +1,185 @@
+[
+  {
+    "standard": 10,
+    "subjects": [
+      {
+        "chapters": [
+          {
+            "concepts": [
+              {
+                "concept_id": "851537",
+                "concept_name": "alternating current"
+              },
+              {
+                "concept_id": "851483",
+                "concept_name": "magnetic effect"
+              },
+              {
+                "concept_id": "851426",
+                "concept_name": "magnetic field due to metallic conductor"
+              },
+              {
+                "concept_id": "851504",
+                "concept_name": "magnetic field"
+              },
+              {
+                "concept_id": "851416",
+                "concept_name": "magnetic flux"
+              },
+              {
+                "concept_id": "851447",
+                "concept_name": "dc motor"
+              },
+              {
+                "concept_id": "851471",
+                "concept_name": "short circuit"
+              },
+              {
+                "concept_id": "851465",
+                "concept_name": "electric motor"
+              },
+              {
+                "concept_id": "851456",
+                "concept_name": "electric generator"
+              },
+              {
+                "concept_id": "851438",
+                "concept_name": "primary coil"
+              },
+              {
+                "concept_id": "851432",
+                "concept_name": "electric fuse"
+              },
+              {
+                "concept_id": "851534",
+                "concept_name": "magnetic field due to current throught straight conductor"
+              },
+              {
+                "concept_id": "851459",
+                "concept_name": "fleming's left hand rule"
+              },
+              {
+                "concept_id": "851528",
+                "concept_name": "faraday's Law"
+              },
+              {
+                "concept_id": "851435",
+                "concept_name": "dc generator"
+              },
+              {
+                "concept_id": "851450",
+                "concept_name": "fleming's right-hand thumb rule"
+              },
+              {
+                "concept_id": "851507",
+                "concept_name": "magnetic effect of electric current"
+              },
+              {
+                "concept_id": "851468",
+                "concept_name": "electromagnetism"
+              },
+              {
+                "concept_id": "851510",
+                "concept_name": "magnetic field due to a current in a solenoid"
+              },
+              {
+                "concept_id": "851525",
+                "concept_name": "commercial motors"
+              },
+              {
+                "concept_id": "851453",
+                "concept_name": "electric effect of moving magnets"
+              },
+              {
+                "concept_id": "851477",
+                "concept_name": "magnetic field due to current through a circular loop"
+              },
+              {
+                "concept_id": "851420",
+                "concept_name": "magnetism"
+              },
+              {
+                "concept_id": "851498",
+                "concept_name": "strength of the magnetic field"
+              },
+              {
+                "concept_id": "851516",
+                "concept_name": "ac generator"
+              },
+              {
+                "concept_id": "851444",
+                "concept_name": "magnetic field due to current carrying conductor"
+              },
+              {
+                "concept_id": "851531",
+                "concept_name": "earth wire"
+              },
+              {
+                "concept_id": "851513",
+                "concept_name": "magnetic force"
+              },
+              {
+                "concept_id": "851441",
+                "concept_name": "heating effect of electricity"
+              },
+              {
+                "concept_id": "851429",
+                "concept_name": "galvanometer"
+              },
+              {
+                "concept_id": "851522",
+                "concept_name": "magnet"
+              },
+              {
+                "concept_id": "851474",
+                "concept_name": "secondary coil"
+              },
+              {
+                "concept_id": "851501",
+                "concept_name": "solenoid"
+              },
+              {
+                "concept_id": "851495",
+                "concept_name": "magnetic field lines"
+              },
+              {
+                "concept_id": "851489",
+                "concept_name": "electric current"
+              },
+              {
+                "concept_id": "851492",
+                "concept_name": "force on a current-carrying conductor in a magnetic field"
+              },
+              {
+                "concept_id": "851486",
+                "concept_name": "safety measures"
+              },
+              {
+                "concept_id": "851540",
+                "concept_name": "direct current"
+              },
+              {
+                "concept_id": "851423",
+                "concept_name": "domestic electric circuits"
+              },
+              {
+                "concept_id": "851480",
+                "concept_name": "magnetic field due to moving conductor"
+              },
+              {
+                "concept_id": "851462",
+                "concept_name": "electromagnetic induction"
+              },
+              {
+                "concept_id": "851519",
+                "concept_name": "commutator"
+              }
+            ],
+            "name": "13:Magnetic Effects of Electric Current"
+          }
+        ],
+        "name": "SCIENCE"
+      }
+    ]
+  }
+]

@@ -1,0 +1,109 @@
+syntax = "proto2";
+
+package graph_curation.api_input;
+
+//post
+import "graph_curation/protos/database.proto";
+
+message Login {
+    optional string username = 1;
+    optional string password = 2;
+}
+
+message GetSubTasks {
+    optional string username = 1;
+}
+
+message CreateUser {
+    optional string username = 1;
+    optional string password = 2;
+    optional string first_name = 3;
+    optional string last_name = 4;
+    optional string email = 5;
+    optional graph_curation.UsersDocument.UserRole.Enum role = 6;
+}
+
+// Acknowledgement is returned.
+message AbortTask {
+    optional string username = 1;
+    optional string chapter_key = 2;
+}
+
+message AssignSubTask {
+    optional string username = 1;
+    optional string chapter_key = 2;
+}
+
+message DeleteUser {
+    optional string username = 1;
+}
+
+// Acknowledgement is returned.
+message ChangePassword {
+    optional string current_password = 1;
+    optional string new_password = 2;
+    optional string user_key = 3;
+}
+
+//taskreport
+message GetAllAssignedTasks {
+    optional string username = 1;
+}
+
+// Acknowledgement is returned.
+message AssignTask {
+    optional string assigned_by = 1;
+    repeated string assigned_to_list = 2;
+    optional string chapter_key = 3;
+}
+
+message GetSelectionData {
+    optional string username = 1;
+}
+
+message GetSelectedConcept {
+    optional string concept_key = 1;
+}
+
+message AddDependentConcept {
+    optional string created_by = 1;
+    optional string dependent_concept_name = 2;//dep
+    optional string dependent_concept_key = 3;
+    optional string concept_key = 4;
+}
+
+// Acknowledgement is returned.
+message FlagDependentConcept {
+    optional string flagged_by = 1;
+    optional string concept_key = 2;
+    optional string nested_concept_key = 3; // dependent_concept_creation_time
+}
+
+// Acknowledgement is returned.
+message UnFlagDependentConcept {
+    optional string unflagged_by = 1;
+    optional string concept_key = 2;
+    optional string nested_concept_key = 3; // dependent_concept_creation_time
+}
+
+// Acknowledgement is returned.
+message DeleteDependentConcept {
+    optional string deleted_by = 1;
+    optional string concept_key = 2;
+    optional string nested_concept_key = 3; // dependent_concept_creation_time
+}
+
+// Acknowledgement is returned.
+message CurationConceptCompleted {
+    optional string concept_key = 1;
+    optional string chapter_key = 2;
+
+}
+
+message GetUserDashboard {
+    optional string username = 1;
+}
+// Acknowledgement is returned.
+message Logout {
+    optional string username = 1;
+}

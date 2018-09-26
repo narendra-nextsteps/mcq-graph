@@ -1,0 +1,32 @@
+[
+  {
+    "username": "nextsteps",
+    "first_name": "NextSteps",
+    "last_name": "ILFS",
+    "email": "anvehsa.bagaria@nextsteps.ai",
+    "role": "SUPER_ADMIN",
+    "password": "12345",
+    "color": "green",
+    "is_active": 1
+  },
+  {
+    "username": "anvesha",
+    "first_name": "anvehsa",
+    "last_name": "baagria",
+    "email": "anvehsa.bagaria@nextsteps.ai",
+    "role": "SME",
+    "password": "12345",
+    "color": "green",
+    "is_active": 1
+  },
+  {
+    "username": "abcdef",
+    "first_name": "ab",
+    "last_name": "cdef",
+    "email": "anvehsa.bagaria@nextsteps.ai",
+    "role": "SME",
+    "password": "12345",
+    "color": "green",
+    "is_active": 1
+  }
+]

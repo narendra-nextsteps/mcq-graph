@@ -1,0 +1,1429 @@
+[
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic flux",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetism",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "domestic electric circuits",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "potential Diffenence",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "fuse",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field due to metallic conductor",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "conductor",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic Field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "galvanometer",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "potential difference",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "electric fuse",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "earthing",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "dc generator",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "mechanical energy",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "primary coil",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "potential difference",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "heating effect of electricity",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electricity",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field due to current carrying conductor",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "primary coil",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "secondary coil",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "dc motor",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "mechanical energy",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "fleming's right-hand thumb rule",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "electric effect of moving magnets",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electricity",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "electric generator",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "mechanical Energy",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electrical energy ",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "fleming's left hand rule",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "electromagnetic induction",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "potential difference",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic flux",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "electric motor",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "fleming's left hand rule",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "mechanical energy",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "electromagnetism",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electricity",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "short circuit",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electricity",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "secondary coil",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "potential difference",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field due to current through a circular loop",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field due to moving conductor",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "potential difference",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic effect",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "safety measures",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "earthing",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "fuse",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "electric current",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric charge",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "force on a current-carrying conductor in a magnetic field",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "fleming's left-hand rule",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field lines",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "strength of the magnetic field",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "solenoid",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field ",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic effect of electric current",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electricity",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic effect",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field due to a current in a solenoid",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "solenoid",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic force",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "ac generator",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electromagnetic induction",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "mechanical Energy",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "commutator",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electricity",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnet",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "magnet",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "commercial motors",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "faraday's Law",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "earth wire",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "magnetic field due to current throught straight conductor",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      },
+      {
+        "concept_id": null,
+        "concept_name": "magnetic field",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "alternating current",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  },
+  {
+    "chapter_key": "825005",
+    "concept_name": "direct current",
+    "dependent_concepts": [
+      {
+        "concept_id": null,
+        "concept_name": "electric current",
+        "created_by": "",
+        "deleted_by": "",
+        "flagged_by": "",
+        "is_active": true,
+        "time_created": "2018-02-21T07:34:05.920285Z",
+        "time_deleted": "2018-02-21T07:34:05.920285Z",
+        "unflagged_by": ""
+      }
+    ],
+    "pervious_users": []
+  }
+]

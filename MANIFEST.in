@@ -1,0 +1,2 @@
+recursive-include graph_curation/templates *
+recursive-include graph_curation/static *

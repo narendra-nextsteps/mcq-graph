@@ -1,0 +1,107 @@
+LET concept_key = "magnetism"
+
+LET curated_concept = (
+    UPDATE { _key: concept_key } WITH {
+        locked_to: NULL
+    } IN CurationConcepts
+    RETURN NEW
+)
+
+LET completed_sub_task = (
+    FOR sub_task IN SubTasks
+        FILTER sub_task.concept_key == concept_key AND sub_task.status == "PENDING"
+        UPDATE sub_task WITH {
+            status: "COMPLETED", completed_time: DATE_ISO8601(DATE_NOW())
+        } IN SubTasks
+        RETURN NEW
+)[0]
+
+LET num_pending_sub_tasks = (
+    //FILTER !IS_NULL(completed_sub_task)
+    FOR sub_task in SubTasks
+        FILTER sub_task.task_key == completed_sub_task.task_key AND sub_task.status == 'PENDING'
+        COLLECT WITH COUNT INTO num_pending_sub_tasks
+        RETURN num_pending_sub_tasks
+)[0]
+
+LET is_task_completed = num_pending_sub_tasks == 0
+
+LET completed_task = (
+    FILTER is_task_completed
+    UPDATE { _key: completed_sub_task.task_key } WITH {
+        status: "COMPLETED", completed_time: DATE_ISO8601(DATE_NOW())
+    } IN Tasks
+    RETURN NEW
+)
+
+LET next_user_task = (
+    FILTER is_task_completed
+    FOR task IN Tasks
+        FILTER task.chapter_key == completed_task.chapter_key AND task.status == 'NOT_YET_ASSIGNED'
+        SORT task._key
+        LIMIT 1
+        RETURN task
+)[0]
+
+LET updated_next_user_task = (
+    FILTER !IS_NULL(next_user_task)
+    UPDATE next_user_task WITH { status: 'PENDING' } IN Tasks
+    RETURN NEW
+)
+
+LET updated_chapter = (
+    FILTER is_task_completed
+    UPDATE { _key: completed_task.chapter_key } WITH {
+        locked_to: updated_next_user_task.assigned_to
+    } In Chapters
+    RETURN NEW
+)
+
+LET need_to_create_subtasks = is_task_completed AND !IS_NULL(next_user_task)
+
+LET concepts = (
+    FILTER need_to_create_subtasks
+    FOR concept_doc in CurationConcepts
+        FILTER POSITION(concept_doc.chapter_keys, completed_task.chapter_key) AND IS_NULL(concept_doc.locked_to)
+        RETURN {
+            key: concept_doc._key,
+            name: concept_doc.concept_name
+        }
+)
+
+LET next_user_sub_tasks = (
+    FILTER need_to_create_subtasks
+    FOR concept in concepts
+        INSERT {
+            task_key: next_user_task._key,
+            concept_key: concept.key,
+            concept_name: concept.name,
+            status: 'PENDING',
+            assigned_time: DATE_ISO8601(DATE_NOW())
+        } IN SubTasks
+        RETURN NEW
+)
+
+LET newly_locked_concepts = (
+    FILTER need_to_create_subtasks
+    FOR concept in concepts
+        UPDATE { _key: concept.key } WITH {
+            locked_to: updated_next_user_task.assigned_to
+        } IN CurationConcepts
+        RETURN {
+            concept_key: concept.key,
+            assigned_to: updated_next_user_task.assigned_to
+        }
+)
+
+RETURN {
+    curated_concept: curated_concept,
+    completed_sub_task: completed_sub_task,
+    is_task_completed: is_task_completed,
+    completed_task: completed_task,
+    updated_next_user_task: updated_next_user_task,
+    updated_chapter: updated_chapter,
+    need_to_create_subtasks: need_to_create_subtasks,
+    next_user_sub_tasks: next_user_sub_tasks,
+    newly_locked_concepts: newly_locked_concepts
+}

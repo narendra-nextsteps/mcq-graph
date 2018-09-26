@@ -1,0 +1,120 @@
+syntax = "proto2";
+
+package graph_curation;
+
+import "google/protobuf/timestamp.proto";
+
+message UsersDocument {
+    message UserRole {
+        enum Enum {
+            SUPER_ADMIN = 1;
+            SME = 2;
+            ADMIN = 3;
+        }
+    }
+    optional string _id = 1;
+    optional string _key = 2; // username
+    optional string _rev = 3;
+    optional string username = 4;
+    optional string first_name = 5;
+    optional string last_name = 6;
+    optional string email = 7;
+    optional UserRole.Enum role = 8;
+    optional string password = 9;
+    optional int32 is_active = 10;
+    optional string color = 11;
+}
+
+message ChaptersDocument {
+    optional string _id = 1;
+    optional string _key = 2; //chapter_id
+    optional string _rev = 3;
+    optional int32 standard = 4;
+    optional string subject = 5;
+    optional string book = 6;
+    optional string chapter = 7;
+    optional string locked_to = 8 [default = ''];
+}
+
+message CurationConceptsDocument {
+    message DependentConcepts {
+        optional string created_by = 1;
+        optional string deleted_by = 2;
+        optional string flagged_by = 3;
+        optional string unflagged_by = 4;
+        optional string concept_key = 5;
+        optional string concept_name = 6;
+        optional google.protobuf.Timestamp time_created = 7;
+        optional google.protobuf.Timestamp time_deleted = 8;
+        optional bool is_active = 9;
+    }
+    optional string _id = 1;
+    optional string _key = 2;//concept_id which is _join of lower concept name
+    optional string _rev = 3;
+    optional string concept_name = 4;
+    repeated string chapter_keys = 5;
+    optional string locked_to = 6 [default = ''];
+    repeated string pervious_users = 7;
+    map<string, DependentConcepts> dependent_concepts = 8;//created time to the dependent concept
+}
+
+message ConceptsDocument {
+    optional string _id = 1;
+    optional string _key = 2;//concept_id which is _join of lower concept name
+    optional string _rev = 3;
+    optional string concept_name = 4;
+    repeated string chapter_keys = 5;
+}
+
+message ConceptEdgeDocument {
+    optional string _id = 1;
+    optional string _key = 2;
+    optional string _rev = 3;
+    optional string _from = 4;
+    optional string _to = 5;
+}
+
+message TasksDocument {
+    message TaskStatus {
+        enum Enum {
+            COMPLETED = 1;
+            PENDING = 2;
+            NOT_YET_ASSIGNED = 3;
+            ABORTED = 4;
+        }
+    }
+    optional string _id = 1;
+    optional string _key = 2; //task_id
+    optional string _rev = 3;
+    optional string chapter_key = 4;
+    optional string chapter = 5;
+    optional string assigned_to = 6;
+    optional string assigned_by = 7;
+    optional google.protobuf.Timestamp assigned_time = 8;
+    optional google.protobuf.Timestamp completed_time = 9;
+    optional TaskStatus.Enum status = 10;
+}
+
+message SubTasksDocument {
+    message SubTaskStatus {
+        enum Enum {
+            COMPLETED = 1;
+            PENDING = 2;
+        }
+    }
+    optional string _id = 1;
+    optional string _key = 2; //sub_task_id
+    optional string _rev = 3;
+    optional string task_key = 4;
+    optional string concept_key = 5;
+    optional string concept = 6;
+    optional SubTaskStatus.Enum status = 7;
+    optional google.protobuf.Timestamp assigned_time = 8;
+    optional google.protobuf.Timestamp completed_time = 9;
+}
+
+message RevokedTokenDocument {
+    optional string _id = 1;
+    optional string _key = 2; //revoked token
+    optional string _rev = 3;
+}
