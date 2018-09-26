@@ -20,21 +20,21 @@ def login_query(username, password):
 
     """
     return """
-LET username = "{username}"
-LET password =  "{password}"
-LET user_doc = DOCUMENT(CONCAT("{user_collection}/", username))
+        LET username = "{username}"
+        LET password =  "{password}"
+        LET user_doc = DOCUMENT(CONCAT("{user_collection}/", username))
 
-FILTER user_doc.username == username
-FILTER user_doc.password == password
-    RETURN {{
-        user_key: user_doc._key,
-        user_role: user_doc.role,
-        is_successful_execution: true
-    }}
-        """.format(
-            username=username, password=password,
-            user_collection=_db_nomenclature.USER_COLLECTION
-        )
+        FILTER user_doc.username == username
+        FILTER user_doc.password == password
+            RETURN {{
+                user_key: user_doc._key,
+                user_role: user_doc.role,
+                is_successful_execution: true
+            }}
+    """.format(
+        username=username, password=password,
+        user_collection=_db_nomenclature.USER_COLLECTION
+    )
 
 
 def login_query_response(username, password):
