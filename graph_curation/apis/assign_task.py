@@ -56,9 +56,16 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
 
     LET need_to_create_subtasks = tasks[0].status == 'PENDING'
 
-    LET sub_tasks = (
+    LET mcqs = (
         FILTER need_to_create_subtasks
         FOR mcq in Mcqs
+            FILTER chapter_doc.chapter_id == mcq.chapterId
+            RETURN mcq
+    )
+
+    LET sub_tasks = (
+        FILTER need_to_create_subtasks
+        FOR mcq in mcqs
             INSERT {{
                 task_key: tasks[0]._key,
                 mcq_key: mcq._key,
