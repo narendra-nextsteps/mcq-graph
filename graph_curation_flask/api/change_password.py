@@ -3,7 +3,8 @@ from flask_restful import Resource as _Resource
 from google.protobuf import json_format as _json_format
 from flask_jwt_extended import jwt_required
 from graph_curation_flask import flask_request_response
-from graph_curation.apis.change_password_transaction import change_password_query_response
+from graph_curation.apis.change_password_transaction \
+    import change_password_query_response
 from graph_curation.protos import api_input_pb2 as _api_intput_pb2
 from graph_curation.protos import api_output_pb2 as _api_output_pb2
 

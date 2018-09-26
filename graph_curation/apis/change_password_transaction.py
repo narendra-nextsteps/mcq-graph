@@ -1,5 +1,5 @@
 """Change password query."""
-from graph_curation.db import db_nomenclature as _db_nomenclature
+# from graph_curation.db import db_nomenclature as _db_nomenclature
 from graph_curation.db import db_objects as _db_objects
 
 
@@ -22,48 +22,48 @@ def change_password_query(currentPassword, newPassword, userKey):
 
     """
     return """
-function() {
+    function() {
         let currentPassword = "%s",
         newPassword = "%s",
         userKey = "%s"
-    let db = require('@arangodb').db
-    let userCheck = db._query(`
-        LET doc = DOCUMENT(CONCAT('Users/', @userKey))
-        RETURN IS_NULL(doc) ? {
-            "is_successful_execution": false,
-            "execution_error_messages": [
-                "username: @userKey doesn't exist."
-            ]
-        } : (
-            @currentPassword == doc.password ? {
-                "is_successful_execution": true
-            } : {
+        let db = require('@arangodb').db
+        let userCheck = db._query(`
+            LET doc = DOCUMENT(CONCAT('Users/', @userKey))
+            RETURN IS_NULL(doc) ? {
                 "is_successful_execution": false,
                 "execution_error_messages": [
-                    "username: @userKey current password doesn't match."
+                    "username: @userKey doesn't exist."
                 ]
-            }
-        )
-    `, {userKey: userKey, currentPassword: currentPassword}).toArray()[0]
-    if (!userCheck.is_successful_execution) return userCheck
+            } : (
+                @currentPassword == doc.password ? {
+                    "is_successful_execution": true
+                } : {
+                    "is_successful_execution": false,
+                    "execution_error_messages": [
+                        "username: @userKey current password doesn't match."
+                    ]
+                }
+            )
+        `, {userKey: userKey, currentPassword: currentPassword}).toArray()[0]
+        if (!userCheck.is_successful_execution) return userCheck
 
-    if (currentPassword === newPassword) return {
-        "is_successful_execution": false,
-        "execution_error_messages": ["both new and old are same passwords."]
-    }
-
-    db._query(`
-        LET doc = DOCUMENT(CONCAT('Users/', @userKey))
-        UPDATE doc WITH {
-            password: @newPassword
+        if (currentPassword === newPassword) return {
+            "is_successful_execution": false,
+            "execution_error_messages":["both new and old are same passwords."]
         }
-        In Users
-        RETURN true
-    `, {newPassword: newPassword, userKey: userKey}).toArray()[0]
 
-    return {"is_successful_execution": true}
-    }
-""" % (currentPassword, newPassword, userKey)
+        db._query(`
+            LET doc = DOCUMENT(CONCAT('Users/', @userKey))
+            UPDATE doc WITH {
+                password: @newPassword
+            }
+            In Users
+            RETURN true
+        `, {newPassword: newPassword, userKey: userKey}).toArray()[0]
+
+        return {"is_successful_execution": true}
+        }
+    """ % (currentPassword, newPassword, userKey)
 
 
 def change_password_query_response(currentPassword, newPassword, userKey):
