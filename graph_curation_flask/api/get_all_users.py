@@ -12,6 +12,7 @@ USERS_DATA_API = "/get-all-users"
 
 class AllUsersDataRest(_Resource):
     """Handeler for Geting all users data Rest api."""
+
     @jwt_required
     def get(self):
         """Get all the users data."""

@@ -4,7 +4,7 @@ from graph_curation.db import db_objects as _db_objects
 
 
 def get_all_users_query():
-    """ Query all users in the db.
+    """Query all users in the db.
 
     Returns
     -------
@@ -13,25 +13,25 @@ def get_all_users_query():
 
     """
     return """
-LET users = (
-FOR users in {user_collection}
-RETURN {{
-    username: users.username,
-    first_name: users.first_name,
-    last_name: users.last_name,
-    email: users.email,
-    role:users.role
-}}
-)
-RETURN {{
-    users: users,
-    is_successful_execution: true
-}}
+        LET users = (
+        FOR users in {user_collection}
+        RETURN {{
+            username: users.username,
+            first_name: users.first_name,
+            last_name: users.last_name,
+            email: users.email,
+            role:users.role
+        }}
+        )
+        RETURN {{
+            users: users,
+            is_successful_execution: true
+        }}
     """.format(user_collection=_db_nomenclature.USER_COLLECTION)
 
 
 def get_all_users_query_response():
-    """ Query all users in the db.
+    """Query all users in the db.
 
     Returns
     -------
@@ -39,7 +39,6 @@ def get_all_users_query_response():
         return all users username,first name,last name,email.
 
     """
-    print("@@@@@@@@@@@@@@@@@@@@@@@@!!!!!!!!!!!!!!!!!!!!!!!!!!")
     query_response = _db_objects.graph_db().AQLQuery(
         get_all_users_query()
     ).response
