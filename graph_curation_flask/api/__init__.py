@@ -10,7 +10,8 @@ from . import \
     unflagged_concpet, get_all_assigned_tasks, get_sub_task, \
     add_dependent_concept, assign_task, deleted_concept, \
     get_selection_data, login, logout, get_refresh_token, delete_user, \
-    abort_task, get_assignment_data, task_data, sub_task_data
+    abort_task, get_assignment_data, task_data, sub_task_data, \
+    get_dependent_concepts
 
 from flask_jwt_extended import JWTManager
 
@@ -48,6 +49,11 @@ API.add_resource(
 API.add_resource(
     sub_task_data.SubTaskData,
     sub_task_data.SUB_TASK_DATA_API
+)
+
+API.add_resource(
+    get_dependent_concepts.GetDependentConcepts,
+    get_dependent_concepts.DEPENDENT_CONCEPTS_API
 )
 
 API.add_resource(
