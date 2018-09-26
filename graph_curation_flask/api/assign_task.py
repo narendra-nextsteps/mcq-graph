@@ -19,7 +19,6 @@ class AssignTask(_Resource):
     @jwt_required
     def post(self):
         """Add assigned task of the user into database."""
-        app.logger.error("####################assign_task_query_response Done####################")
         request, error_message = flask_request_response.message_request(
             _api_intput_pb2.AssignTask, ASSIGN_TASK_API, POST_REQUEST
         )
@@ -33,14 +32,12 @@ class AssignTask(_Resource):
                 request.assigned_by, request.assigned_to_list,
                 request.chapter_key
             )
-            app.logger.error("####################assign_task_query_response Done####################")
             app.logger.info(assign_task_response)
             return flask_request_response.json_response(
                 assign_task_response,
                 ASSIGN_TASK_API, POST_REQUEST, 200
             )
         except Exception as err:
-            app.logger.error("*********************" + str(err) + "**********************************")
             return flask_request_response.error_response(
                 [str(err)], ASSIGN_TASK_API, POST_REQUEST
             )
