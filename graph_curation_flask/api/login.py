@@ -1,9 +1,10 @@
 """Login User Api."""
 from flask_restful import Resource as _Resource
+from flask_jwt_extended import create_access_token, create_refresh_token
+
 from graph_curation_flask import flask_request_response
 from graph_curation.apis.login import login_query_response
 from graph_curation.protos import api_input_pb2 as _api_intput_pb2
-from flask_jwt_extended import create_access_token, create_refresh_token
 
 POST_REQUEST = "POST"
 LOGIN_API = "/login"
