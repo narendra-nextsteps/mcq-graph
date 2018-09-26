@@ -13,6 +13,7 @@ SUPER_ADMIN_DASHBOARD_API = "/get-super-admin-dashboard"
 
 class SuperAdminDashboardDataRest(_Resource):
     """Handeler for getting superAdmin dashboard data Rest api."""
+
     @jwt_required
     def get(self):
         """Get all the tasks for super admin dashboard."""
