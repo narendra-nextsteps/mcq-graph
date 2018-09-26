@@ -120,6 +120,50 @@ message TaskData {
     repeated string execution_error_messages = 31;
 }
 
+message SubTaskData {
+    message Concept {
+        optional string id = 1;
+        optional string name = 2;
+    }
+    message Aspect {
+        optional string aspect = 1;
+        optional string concept = 2;
+    }
+    message Question {
+        optional string rawText = 1;
+        optional string cleanText = 2;
+        repeated Concept dominantConcepts = 3;
+        repeated Concept nonDominantConcepts = 4;
+        repeated Aspect aspects = 5;
+    }
+    message Option {
+        optional string rawText = 1;
+        optional string cleanText = 2;
+        optional int32 level = 3;
+        optional bool isCorrect = 4;
+        repeated Concept dominantConcepts = 5;
+        repeated Concept nonDominantConcepts = 6;
+    }
+    message MCQ {
+        optional string mcqId = 1;
+        optional string contextId = 2;
+        optional Question question = 3;
+        repeated Option options = 4;
+        optional string type = 5;
+        optional int32 questionLevel = 6;
+        optional string standard = 7;
+        optional string subject = 8;
+        optional string chapter = 9;
+        optional int32 chapterId = 10;
+        optional string _key = 11;
+        optional string _id = 12;
+        optional string _rev = 13;
+    }
+    repeated MCQ mcqs = 1;
+    optional bool is_successful_execution = 30;
+    repeated string execution_error_messages = 31;
+}
+
 
 // old --------
 

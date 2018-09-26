@@ -42,6 +42,10 @@ message TaskData {
     required string username = 1;
 }
 
+message SubTaskData {
+    required string chapter_id = 1;
+}
+
 
 // old ---
 
