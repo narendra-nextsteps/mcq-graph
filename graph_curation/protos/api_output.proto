@@ -96,6 +96,7 @@ message GetUserDashboard {
         repeated GetSubTasks.SubTask sub_tasks = 2;
         optional string chapter_key = 3;
         optional string chapter = 4;
+        optional string task_status = 5;
     }
     repeated TaskReport tasks = 1;
     optional bool is_successful_execution = 30;

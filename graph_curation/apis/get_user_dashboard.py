@@ -37,7 +37,8 @@ LET tasks = (
             sub_tasks: sub_tasks,
             chapter: task_doc.chapter,
             chapter_key: task_doc.chapter_key,
-            task_key: task_doc.task_key
+            task_key: task_doc.task_key,
+            task_status: task_doc.status
         }}
 )
 
