@@ -38,6 +38,10 @@ message GetUserDashboard {
     optional string username = 1;
 }
 
+message TaskData {
+    required string username = 1;
+}
+
 
 // old ---
 
@@ -47,15 +51,8 @@ message GetSubTasks {
 }
 
 // Acknowledgement is returned.
-message AbortTask {
-    optional string username = 1;
-    optional string chapter_key = 2;
-}
 
-message AssignSubTask {
-    optional string username = 1;
-    optional string chapter_key = 2;
-}
+
 
 // Acknowledgement is returned.
 
@@ -108,6 +105,12 @@ message CurationConceptCompleted {
     optional string concept_key = 1;
     optional string chapter_key = 2;
 
+}
+
+
+message AbortTask {
+    optional string username = 1;
+    optional string chapter_key = 2;
 }
 
 // Acknowledgement is returned.

@@ -102,6 +102,24 @@ message GetUserDashboard {
     repeated string execution_error_messages = 31;
 }
 
+message TaskData {
+    message Standard {
+        optional string standard = 1;
+        repeated Subject subjects = 2;
+    }
+    message Subject {
+        optional string name = 1;
+        repeated Chapter chapters = 2;
+    }
+    message Chapter {
+        optional string name = 1;
+        optional string id = 2;
+    }
+    repeated Standard selection_data = 1;
+    optional bool is_successful_execution = 30;
+    repeated string execution_error_messages = 31;
+}
+
 
 // old --------
 
