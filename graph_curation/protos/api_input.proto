@@ -2,16 +2,11 @@ syntax = "proto2";
 
 package graph_curation.api_input;
 
-//post
 import "graph_curation/protos/database.proto";
 
 message Login {
     optional string username = 1;
     optional string password = 2;
-}
-
-message GetSubTasks {
-    optional string username = 1;
 }
 
 message CreateUser {
@@ -21,6 +16,34 @@ message CreateUser {
     optional string last_name = 4;
     optional string email = 5;
     optional graph_curation.UsersDocument.UserRole.Enum role = 6;
+}
+
+message DeleteUser {
+    optional string username = 1;
+}
+
+message ChangePassword {
+    optional string current_password = 1;
+    optional string new_password = 2;
+    optional string user_key = 3;
+}
+
+message AssignTask {
+    optional string assigned_by = 1;
+    repeated string assigned_to_list = 2;
+    optional string chapter_key = 3;
+}
+
+message GetUserDashboard {
+    optional string username = 1;
+}
+
+
+// old ---
+
+
+message GetSubTasks {
+    optional string username = 1;
 }
 
 // Acknowledgement is returned.
@@ -34,16 +57,7 @@ message AssignSubTask {
     optional string chapter_key = 2;
 }
 
-message DeleteUser {
-    optional string username = 1;
-}
-
 // Acknowledgement is returned.
-message ChangePassword {
-    optional string current_password = 1;
-    optional string new_password = 2;
-    optional string user_key = 3;
-}
 
 //taskreport
 message GetAllAssignedTasks {
@@ -51,11 +65,7 @@ message GetAllAssignedTasks {
 }
 
 // Acknowledgement is returned.
-message AssignTask {
-    optional string assigned_by = 1;
-    repeated string assigned_to_list = 2;
-    optional string chapter_key = 3;
-}
+
 
 message GetSelectionData {
     optional string username = 1;
@@ -100,9 +110,6 @@ message CurationConceptCompleted {
 
 }
 
-message GetUserDashboard {
-    optional string username = 1;
-}
 // Acknowledgement is returned.
 message Logout {
     optional string username = 1;

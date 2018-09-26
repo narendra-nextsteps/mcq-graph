@@ -25,7 +25,7 @@ message GetSuperAdminDashboard {
         optional graph_curation.TasksDocument.TaskStatus.Enum status = 1;
         optional string chapter_key = 2;
         optional string chapter = 3;
-        optional string assigned_to = 4;//assigned to
+        optional string assigned_to = 4;
         optional google.protobuf.Timestamp completed_time = 5;
     }
     repeated TaskReport tasks = 1;
@@ -33,26 +33,6 @@ message GetSuperAdminDashboard {
     repeated string execution_error_messages = 31;
 }
 
-
-message GetSubTasks {
-    message SubTask {
-        optional string sub_task_key = 1;
-        optional graph_curation.SubTasksDocument.SubTaskStatus.Enum sub_task_status = 2;
-        optional string concept_key = 3;
-        optional string concept = 4;
-    }
-    repeated SubTask sub_tasks = 1;
-    optional bool is_successful_execution = 30;
-    repeated string execution_error_messages = 31;
-}
-
-message CreateUser {
-    // optional GetAllUsers.User added_user = 1;
-    optional bool is_successful_execution = 30;
-    repeated string execution_error_messages = 31;
-}
-
-// GET
 message GetAllUsers {
     message User {
         optional string username = 1;
@@ -66,6 +46,66 @@ message GetAllUsers {
     repeated string execution_error_messages = 31;
 }
 
+message CreateUser {
+    optional bool is_successful_execution = 30;
+    repeated string execution_error_messages = 31;
+}
+
+message GetAssignmentData {
+    message Chapter {
+        optional string chapter_key = 1;
+        optional string standard = 2;
+        optional string chapter = 3;
+        optional string book = 4;
+        optional string subject = 5;
+    }
+
+    message User {
+        optional string user_key = 1;
+        optional string role = 2;
+    }
+
+    message Task {
+        optional string task_key = 1;
+        optional string status = 2;
+        optional string assigned_to = 3;
+        optional string chapter_key = 4;
+        optional string chapter = 5;
+        optional string assigned_time = 6;
+    }
+    repeated Chapter chapters = 1;
+    repeated User users = 2;
+    repeated Task tasks = 3;
+}
+
+message GetSubTasks {
+    message SubTask {
+        optional string sub_task_key = 1;
+        optional graph_curation.SubTasksDocument.SubTaskStatus.Enum sub_task_status = 2;
+        optional string concept_key = 3;
+        optional string concept = 4;
+    }
+    repeated SubTask sub_tasks = 1;
+    optional bool is_successful_execution = 30;
+    repeated string execution_error_messages = 31;
+}
+
+message GetUserDashboard {
+    message TaskReport {
+        optional string task_key = 1;
+        repeated GetSubTasks.SubTask sub_tasks = 2;
+        optional string chapter_key = 3;
+        optional string chapter = 4;
+    }
+    repeated TaskReport tasks = 1;
+    optional bool is_successful_execution = 30;
+    repeated string execution_error_messages = 31;
+}
+
+
+// old --------
+
+
 message GetAllAssignedTasks {
     message ChapterAssignment {
         optional string chapter_key = 1;
@@ -76,19 +116,6 @@ message GetAllAssignedTasks {
         optional graph_curation.TasksDocument.TaskStatus.Enum status = 6;
     }
     repeated ChapterAssignment assignments = 1;
-    optional bool is_successful_execution = 30;
-    repeated string execution_error_messages = 31;
-}
-
-
-message GetUserDashboard {
-    message TaskReport {
-        optional string task_key = 1;
-        repeated GetSubTasks.SubTask sub_tasks = 2;
-        optional string chapter_key = 3;
-        optional string chapter = 4;
-    }
-    repeated TaskReport tasks = 1;
     optional bool is_successful_execution = 30;
     repeated string execution_error_messages = 31;
 }
