@@ -20,28 +20,28 @@ def create_user_query(username, password, first_name, last_name, email, role):
         role can be SME,SUPER_ADMIN,ADMIN
     """
     return """
-INSERT {{
-    "username": "{username}",
-    "password": "{password}",
-    "first_name": "{first_name}",
-    "last_name": "{last_name}",
-    "role": "{role}",
-    "email":"{email}",
-    "_key": "{username}"
-}}
-IN {user_collection}
-RETURN {{
-    is_successful_execution: true
-}}
+        INSERT {{
+            "username": "{username}",
+            "password": "{password}",
+            "first_name": "{first_name}",
+            "last_name": "{last_name}",
+            "role": "{role}",
+            "email":"{email}",
+            "_key": "{username}"
+        }}
+        IN {user_collection}
+        RETURN {{
+            is_successful_execution: true
+        }}
     """.format(
         username=username, password=password,
         first_name=first_name, last_name=last_name, email=email, role=role,
         user_collection=_db_nomenclature.USER_COLLECTION
-        )
+    )
 
 
 def user_exist_or_not(username):
-    """Check wheter the username exist or not
+    """Check wheter the username exist or not.
 
     Parameters
     ----------
@@ -54,12 +54,12 @@ def user_exist_or_not(username):
 
     """
     return """
-    LET username = "{username}"
-    RETURN IS_NULL(DOCUMENT(CONCAT("{user_collection}/",username)))
+        LET username = "{username}"
+        RETURN IS_NULL(DOCUMENT(CONCAT("{user_collection}/",username)))
     """.format(
         username=username,
         user_collection=_db_nomenclature.USER_COLLECTION
-        )
+    )
 
 
 def create_user_query_response(
@@ -95,6 +95,9 @@ def create_user_query_response(
                 )
             ).response
         if query_response['error'] or len(query_response['result']) is 0:
-            return {"is_successful_execution": False}
+            return {"is_successful_execution": False, "msg": "err"}
         return query_response['result'][0]
-    return {"is_successful_execution": False}
+    return {
+        "is_successful_execution": False,
+        "execution_error_messages": ["User exist's"]
+    }
