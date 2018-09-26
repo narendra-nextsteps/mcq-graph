@@ -46,6 +46,11 @@ message SubTaskData {
     required string chapter_id = 1;
 }
 
+message GetDependentConcepts {
+    required string concept_id = 1;
+    required string mcq_id = 2;
+}
+
 
 // old ---
 
