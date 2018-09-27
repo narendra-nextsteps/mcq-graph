@@ -188,6 +188,11 @@ message GetDependentConcepts {
     repeated string execution_error_messages = 31;
 }
 
+message AddEdge {
+    optional bool is_successful_execution = 30;
+    repeated string execution_error_messages = 31;
+}
+
 
 // old --------
 

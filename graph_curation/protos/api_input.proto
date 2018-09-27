@@ -51,6 +51,20 @@ message GetDependentConcepts {
     required string mcq_id = 2;
 }
 
+message AddEdge {
+    message Edge {
+        optional string _key = 1;
+        optional string _from = 2;
+        optional string _to = 3;
+        optional string created_by = 4;
+        optional string created_time = 5;
+        optional string to_concept_name = 6;
+        optional string to_concept_id = 7;
+        optional string mcq_id = 8;
+    }
+    repeated Edge edges = 1;
+}
+
 
 // old ---
 
