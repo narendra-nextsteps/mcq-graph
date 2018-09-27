@@ -11,7 +11,7 @@ from . import \
     add_dependent_concept, assign_task, deleted_concept, \
     get_selection_data, login, logout, get_refresh_token, delete_user, \
     abort_task, get_assignment_data, task_data, sub_task_data, \
-    get_dependent_concepts
+    get_dependent_concepts, add_edge
 
 from flask_jwt_extended import JWTManager
 
@@ -59,6 +59,11 @@ API.add_resource(
 API.add_resource(
     get_assignment_data.GetAssignmentsData,
     get_assignment_data.ASSIGNMENT_DATA_API
+)
+
+API.add_resource(
+    add_edge.AddEdge,
+    add_edge.ADD_EDGE_API
 )
 
 API.add_resource(
