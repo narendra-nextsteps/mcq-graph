@@ -193,6 +193,11 @@ message AddEdge {
     repeated string execution_error_messages = 31;
 }
 
+message DeleteEge {
+    optional bool is_successful_execution = 30;
+    repeated string execution_error_messages = 31;
+}
+
 
 // old --------
 

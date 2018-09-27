@@ -65,6 +65,11 @@ message AddEdge {
     repeated Edge edges = 1;
 }
 
+message DeleteEdge {
+    required string edge_id = 1;
+    optional string username = 2;
+}
+
 
 // old ---
 
