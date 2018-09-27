@@ -32,7 +32,7 @@ class DeleteEdge(_Resource):
         try:
             delete_edge_response = delete_edge_query_response(
                 request.edge_id,
-                request.uid
+                request.username
             )
             response = _api_output_pb2.DeleteEge()
             print("==========>", response, type(response))

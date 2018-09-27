@@ -2,17 +2,17 @@
 
 import json
 import datetime
-from graph_curation.db import db_objects
+from graph_curation.db import db_objects, db_nomenclature
 
 
-def delete_edge_query(edge_id, uid):
+def delete_edge_query(edge_id, username):
     """DB Query to delete dependent concept.
 
     Parameters
     ----------
     edge_id : string
         edge to be deleted.
-    uid : string
+    username : string
         edge_id of the user who deleted it.
     context_id: string
         context in which the edge has to be deleted.
@@ -24,27 +24,26 @@ def delete_edge_query(edge_id, uid):
 
     """
     return """
-        for edge in McqEdges
-            filter edge._key == "{edge_id}"
-            update edge with {{
-                "deleted_by": "{uid}",
-                "deleted_time": "{time}"
-                }} in McqEdges
+    UPDATE "{mcq_edge_collection}/{edge_id}" WITH {{
+        "deleted_by": "{username}",
+        "deleted_time": "{time}"
+    }} in {mcq_edge_collection}
     """.format(
         edge_id=edge_id,
-        uid=uid,
-        time=str(datetime.datetime.utcnow().isoformat())
+        username=username,
+        time=str(datetime.datetime.utcnow().isoformat()),
+        mcq_edge_collection=db_nomenclature.MCQ_EDGE_COLLECTION
     )
 
 
-def delete_edge_query_response(edge_id, uid):
+def delete_edge_query_response(edge_id, username):
     """Delete the dependent concept(edge).
 
     Parameters
     ----------
     edge_id : string
         edge to be deleted.
-    uid : string
+    username : string
         edge_id of the user who deleted it.
     context_id: string
         context in which the edge has to be deleted.
@@ -55,7 +54,7 @@ def delete_edge_query_response(edge_id, uid):
 
     """
     query_response = db_objects.graph_db().AQLQuery(
-        delete_edge_query(edge_id, uid)
+        delete_edge_query(edge_id, username)
     ).response
 
     if query_response['error']:

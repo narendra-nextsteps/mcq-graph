@@ -1,5 +1,5 @@
 function completedSubTask() {
-  let chapterKey = "2344733", mcqKey = "16170"
+  let chapterKey = "2344733", mcqKey = "16155"
   let db = require('@arangodb').db
   let completeTaskExecution = db._query(`
 LET chapter_key = @chapter_key
