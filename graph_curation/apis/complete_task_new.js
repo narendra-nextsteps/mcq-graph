@@ -1,5 +1,5 @@
 function completedSubTask() {
-  let chapterKey = "2344733", mcqKey = "16155"
+  let chapterKey = "2344733", mcqKey = "21665"
   let db = require('@arangodb').db
   let completeTaskExecution = db._query(`
 LET chapter_key = @chapter_key
@@ -17,6 +17,13 @@ LET num_pending_sub_tasks = (
       COLLECT WITH COUNT INTO num_pending_sub_tasks
       RETURN num_pending_sub_tasks
 )[0]
+
+LET update_mcq = (
+  LET doc = DOCUMENT(CONCAT("Mcqs/", mcq_key))
+  UPDATE doc WITH {
+    status: "COMPLETED"
+  } IN Mcqs
+)
 
 LET completed_sub_task = (
   UPDATE pending_sub_task WITH {
