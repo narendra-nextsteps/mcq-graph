@@ -1,4 +1,5 @@
 """Complete sub task or task query."""
+# pep8: disable=E501
 from graph_curation.db import db_objects as _db_objects
 
 
@@ -34,7 +35,7 @@ def complete_transaction_function(chapter_key, mcq_key):
 
         LET num_pending_sub_tasks = (
         FOR sub_task in SubTasks
-            FILTER sub_task.task_key == pending_sub_task.task_key AND sub_task.status == 'PENDING'
+            FILTER sub_task.task_key == pending_sub_task.task_key AND sub_task.status == 'PENDING' # noqa
             COLLECT WITH COUNT INTO num_pending_sub_tasks
             RETURN num_pending_sub_tasks
         )[0]
