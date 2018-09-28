@@ -70,8 +70,14 @@ message DeleteEdge {
     optional string username = 2;
 }
 
+message CurationConceptCompleted {
+    optional string mcq_key = 1;
+    optional string chapter_key = 2;
 
-// old ---
+}
+
+
+// old -------------------------------------------
 
 
 message GetSubTasks {
@@ -129,13 +135,9 @@ message DeleteDependentConcept {
 }
 
 // Acknowledgement is returned.
-message CurationConceptCompleted {
-    optional string concept_key = 1;
-    optional string chapter_key = 2;
-
-}
 
 
+// --------------------------------------------------
 message AbortTask {
     optional string username = 1;
     optional string chapter_key = 2;
