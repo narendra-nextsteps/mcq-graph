@@ -24,10 +24,11 @@ def delete_edge_query(edge_id, username):
 
     """
     return """
-    UPDATE "{mcq_edge_collection}/{edge_id}" WITH {{
-        "deleted_by": "{username}",
-        "deleted_time": "{time}"
-    }} in {mcq_edge_collection}
+    LET doc = DOCUMENT("{mcq_edge_collection}/{edge_id}")
+    UPDATE doc WITH {{
+        "deleted_time": "{username}",
+        "deleted_by": "{time}"
+    }} IN {mcq_edge_collection}
     """.format(
         edge_id=edge_id,
         username=username,
