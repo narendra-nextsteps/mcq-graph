@@ -42,7 +42,7 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
                 chapter_key: chapter_key,
                 chapter: chapter_doc.chapter,
                 assigned_time: DATE_ISO8601(DATE_NOW())
-            }} IN Tasks
+            }} IN {task_collection}
             RETURN NEW
     )
 
@@ -58,7 +58,7 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
 
     LET mcqs = (
         FILTER need_to_create_subtasks
-        FOR mcq in Mcqs
+        FOR mcq in {mcqs_collection}
             FILTER chapter_doc.chapter_id == mcq.chapterId
             RETURN mcq
     )
@@ -76,6 +76,14 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
             RETURN NEW
     )
 
+    LET update_mcq = (
+        FILTER need_to_create_subtasks
+        FOR mcq in Mcqs
+            UPDATE mcq with {{
+                status: "PENDING"
+            }} IN {mcqs_collection}
+    )
+
     RETURN {{
         is_successful_execution: true
     }}
@@ -84,6 +92,8 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
         chapter_key=chapter_key,
         sub_task_collection=_db_nomenclature.SUBTASK_COLLECTION,
         chapter_collection=_db_nomenclature.CHAPTER_COLLECTION,
+        mcqs_collection=_db_nomenclature.MCQS_COLLECTION,
+        task_collection=_db_nomenclature.TASK_COLLECTION
     )
 
 
