@@ -4,12 +4,10 @@ from graph_curation_flask import app
 from graph_curation.apis.jti_blacklisted import is_jti_blacklisted
 
 from . import \
-    add_flagged_concept, get_user_dashboard, get_super_admin_dashboard, \
+    get_user_dashboard, get_super_admin_dashboard, \
     curation_concpet_completed, create_user, change_password, \
-    get_selected_concept, get_all_users, \
-    unflagged_concpet, get_all_assigned_tasks, get_sub_task, \
-    add_dependent_concept, assign_task, deleted_concept, \
-    get_selection_data, login, logout, get_refresh_token, delete_user, \
+    get_all_users, assign_task, \
+    login, logout, get_refresh_token, delete_user, \
     abort_task, get_assignment_data, task_data, sub_task_data, \
     get_dependent_concepts, add_edge, delete_edge
 
@@ -76,41 +74,17 @@ API.add_resource(
 )
 
 API.add_resource(
-    add_flagged_concept.Flaggedconcept, add_flagged_concept.FLAGED_CONCEPT_API
-)
-
-API.add_resource(
-    unflagged_concpet.Unflaggedconcept, unflagged_concpet.UNFLAGED_CONCEPT_API
-)
-
-API.add_resource(
-    add_dependent_concept.AddDependentData,
-    add_dependent_concept.ADD_DEPENDENT_CONCEPT_API
-)
-API.add_resource(
     assign_task.AssignTask, assign_task.ASSIGN_TASK_API
 )
 API.add_resource(
     abort_task.AbortTAsk, abort_task.ABORT_TASK_API
 )
-API.add_resource(
-    deleted_concept.DeleteConceptData, deleted_concept.DELEETE_CONCEPT_API
-)
-API.add_resource(
-    get_sub_task.AllSubTasksDataRest, get_sub_task.SUB_TASK_API
-)
-API.add_resource(
-    get_all_assigned_tasks.AllAssignmetsDataRest,
-    get_all_assigned_tasks.ALL_ASSIGNED_TASK_API
-)
+
 API.add_resource(
     get_all_users.AllUsersDataRest,
     get_all_users.USERS_DATA_API
 )
-API.add_resource(
-    get_selected_concept.SelectedConceptDataRest,
-    get_selected_concept.SELECTED_CONCEPT_API
-)
+
 API.add_resource(
     change_password.ChangePasswordData,
     change_password.CHANGE_PASSWORD_API
@@ -135,10 +109,7 @@ API.add_resource(
     get_user_dashboard.UserDashboardDataRest,
     get_user_dashboard.USER_DASHBOARD_API
 )
-API.add_resource(
-    get_selection_data.SelectionDataRest,
-    get_selection_data.SELECTION_DATA_API
-)
+
 API.add_resource(
     logout.LogOutRest,
     logout.LOGOUT_API
