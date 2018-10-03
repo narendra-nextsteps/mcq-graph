@@ -20,7 +20,8 @@ def get_assignment_data_query():
                     "standard": chapter.standard,
                     "chapter": chapter.chapter,
                     "book": chapter.book,
-                    "subject": chapter.subject
+                    "subject": chapter.subject,
+                    "chapter_id": chapter.chapter_id
                 }}
         )
 

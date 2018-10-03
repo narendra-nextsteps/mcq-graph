@@ -58,6 +58,7 @@ message GetAssignmentData {
         optional string chapter = 3;
         optional string book = 4;
         optional string subject = 5;
+        optional string chapter_id = 6;
     }
 
     message User {
