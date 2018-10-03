@@ -66,6 +66,11 @@ message GetAssignmentData {
         optional string role = 2;
     }
 
+    repeated Chapter chapters = 1;
+    repeated User users = 2;
+}
+
+message GetTasksByChapter {
     message Task {
         optional string task_key = 1;
         optional string status = 2;
@@ -74,9 +79,8 @@ message GetAssignmentData {
         optional string chapter = 5;
         optional string assigned_time = 6;
     }
-    repeated Chapter chapters = 1;
-    repeated User users = 2;
-    repeated Task tasks = 3;
+
+    repeated Task tasks = 1;
 }
 
 message GetSubTasks {
@@ -159,6 +163,7 @@ message SubTaskData {
         optional string _key = 11;
         optional string _id = 12;
         optional string _rev = 13;
+        optional string status = 14;
     }
     repeated MCQ mcqs = 1;
     optional bool is_successful_execution = 30;

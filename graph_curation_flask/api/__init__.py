@@ -9,7 +9,7 @@ from . import \
     get_all_users, assign_task, \
     login, logout, get_refresh_token, delete_user, \
     abort_task, get_assignment_data, task_data, sub_task_data, \
-    get_dependent_concepts, add_edge, delete_edge
+    get_dependent_concepts, add_edge, delete_edge, get_tasks_by_chapter
 
 from flask_jwt_extended import JWTManager
 
@@ -42,6 +42,11 @@ def check_if_token_in_blacklist(decrypted_token):
 API.add_resource(
     task_data.TaskData,
     task_data.TASK_DATA_API
+)
+
+API.add_resource(
+    get_tasks_by_chapter.GetTasksByChapter,
+    get_tasks_by_chapter.GET_TASKS_BY_CHAPTER_API
 )
 
 API.add_resource(
