@@ -32,26 +32,12 @@ def get_assignment_data_query():
                     "role": user.role
                 }}
         )
-
-        LET tasks = (
-            FOR task IN {tasks_collection}
-                RETURN {{
-                    "task_key": task._key,
-                    "status": task.status,
-                    "assigned_to": task.assigned_to,
-                    "chapter_key": task.chapter_key,
-                    "chapter": task.chapter,
-                    "assigned_time": task.assigned_time
-                }}
-        )
         RETURN {{
             chapters: chapters,
-            users: users,
-            tasks: tasks
+            users: users
         }}
     """.format(
         user_collection=_db_nomenclature.USER_COLLECTION,
-        tasks_collection=_db_nomenclature.TASK_COLLECTION,
         chapters_collection=_db_nomenclature.CHAPTER_COLLECTION
     )
 

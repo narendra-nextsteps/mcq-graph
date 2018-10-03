@@ -1,0 +1,8 @@
+[2018-09-26 18:49:57,569][ERROR][assign_task.py:22] ####################assign_task_query_response Done####################
+[2018-09-26 18:51:34,040][ERROR][assign_task.py:22] ####################assign_task_query_response Done####################
+[2018-09-26 18:51:34,040][ERROR][assign_task.py:31] In API calling assign_task_query_response
+[2018-09-26 18:51:34,041][ERROR][assign_task.py:43] *********************module 'graph_curation.db.db_nomenclature' has no attribute 'CURATION_CONCEPTS_COLLETION'**********************************
+[2018-09-26 18:52:58,377][ERROR][assign_task.py:30] In API calling assign_task_query_response
+[2018-09-26 18:53:02,175][ERROR][assign_task.py:30] In API calling assign_task_query_response
+[2018-09-26 19:24:42,459][ERROR][assign_task.py:30] In API calling assign_task_query_response
+[2018-09-26 19:25:30,721][ERROR][assign_task.py:30] In API calling assign_task_query_response
