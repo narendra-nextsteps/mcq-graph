@@ -35,7 +35,7 @@ def complete_transaction_function(chapter_key, mcq_key):
 
         LET num_pending_sub_tasks = (
         FOR sub_task in SubTasks
-            FILTER sub_task.task_key == pending_sub_task.task_key AND sub_task.status == 'PENDING' # noqa
+            FILTER sub_task.task_key == pending_sub_task.task_key AND sub_task.status == 'PENDING'
             COLLECT WITH COUNT INTO num_pending_sub_tasks
             RETURN num_pending_sub_tasks
         )[0]
