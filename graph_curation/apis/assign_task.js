@@ -45,7 +45,7 @@
             INSERT {{
                 task_key: tasks[0]._key,
                 mcq_key: mcq._key,
-                mcq_Id: mcq.mcqId,
+                mcq_id: mcq.mcqId,
                 status: 'PENDING',
                 assigned_time: DATE_ISO8601(DATE_NOW())
             }} IN {sub_task_collection}

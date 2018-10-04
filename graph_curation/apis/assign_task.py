@@ -47,14 +47,14 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
     )
 
     LET updated_chapter_doc = (
-        FILTER IS_NULL(chapter_doc.locked_to)
+        FILTER !is_previously_locked
         UPDATE chapter_doc WITH {{
             locked_to: assigned_to_list[0]
         }} IN {chapter_collection}
         RETURN NEW
     )
 
-    LET need_to_create_subtasks = tasks[0].status == 'PENDING'
+    LET need_to_create_subtasks = !is_previously_locked
 
     LET mcqs = (
         FILTER need_to_create_subtasks
@@ -69,7 +69,7 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
             INSERT {{
                 task_key: tasks[0]._key,
                 mcq_key: mcq._key,
-                mcq_Id: mcq.mcqId,
+                mcq_id: mcq.mcqId,
                 status: 'PENDING',
                 assigned_time: DATE_ISO8601(DATE_NOW())
             }} IN {sub_task_collection}
@@ -78,7 +78,7 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
 
     LET update_mcq = (
         FILTER need_to_create_subtasks
-        FOR mcq in Mcqs
+        FOR mcq in mcqs
             UPDATE mcq with {{
                 status: "PENDING"
             }} IN {mcqs_collection}
