@@ -2,63 +2,62 @@ function completedSubTask() {
     let chapterKey = "2344733"
     let mcqKey = "21664"
     let db = require('@arangodb').db
-    let completeTaskExecution = db._query(`
-    LET chapter_key = @chapter_key
-    LET mcq_key = @mcq_key
+    let completeTaskExecution = db._query( `
+        LET chapter_key = @chapter_key
+        LET mcq_key = @mcq_key
 
-    LET pending_sub_task = (
-    FOR sub_task IN SubTasks
-        FILTER sub_task.mcq_key == mcq_key AND sub_task.status == "PENDING"
-        RETURN sub_task
-    )[0]
+        LET pending_sub_task = (
+            FOR sub_task IN SubTasks
+                FILTER sub_task.mcq_key == mcq_key AND sub_task.status == "PENDING"
+                RETURN sub_task
+        )[0]
 
-    LET num_pending_sub_tasks = (
-    FOR sub_task in SubTasks
-        FILTER sub_task.task_key == pending_sub_task.task_key AND sub_task.status == 'PENDING'
-        COLLECT WITH COUNT INTO num_pending_sub_tasks
-        RETURN num_pending_sub_tasks
-    )[0]
+        LET num_pending_sub_tasks = (
+            FOR sub_task in SubTasks
+                FILTER sub_task.task_key == pending_sub_task.task_key AND sub_task.status == 'PENDING'
+                COLLECT WITH COUNT INTO num_pending_sub_tasks
+                RETURN num_pending_sub_tasks
+        )[0]
 
-    LET update_mcq = (
-    LET doc = DOCUMENT(CONCAT("Mcqs/", mcq_key))
-    UPDATE doc WITH {
-        status: "COMPLETED"
-    } IN Mcqs
-    )
+        LET update_mcq = (
+            LET doc = DOCUMENT(CONCAT("Mcqs/", mcq_key))
+            UPDATE doc WITH {
+                status: "COMPLETED"
+            } IN Mcqs
+        )
 
-    LET completed_sub_task = (
-    UPDATE pending_sub_task WITH {
-        status: "COMPLETED", completed_time: DATE_ISO8601(DATE_NOW())
-    } IN SubTasks
-    RETURN NEW
-    )[0]
+        LET completed_sub_task = (
+            UPDATE pending_sub_task WITH {
+                status: "COMPLETED", completed_time: DATE_ISO8601(DATE_NOW())
+            } IN SubTasks
+            RETURN NEW
+        )[0]
 
-    LET is_task_completed = num_pending_sub_tasks == 1
+        LET is_task_completed = num_pending_sub_tasks == 1
 
-    LET completed_task = (
-    FILTER is_task_completed
-    UPDATE { _key: pending_sub_task.task_key } WITH {
-        status: "COMPLETED", completed_time: DATE_ISO8601(DATE_NOW())
-    } IN Tasks
-    RETURN NEW
-    )[0]
+        LET completed_task = (
+            FILTER is_task_completed
+            UPDATE {_key: pending_sub_task.task_key} WITH {
+                status: "COMPLETED", completed_time: DATE_ISO8601(DATE_NOW())
+            } IN Tasks
+            RETURN NEW
+        )[0]
 
-    LET updated_chapter = (
-    FILTER is_task_completed
-    UPDATE { _key: completed_task.chapter_key } WITH {
-        locked_to: NULL
-    } In Chapters
-    RETURN NEW
-    )[0]
+        LET updated_chapter = (
+            FILTER is_task_completed
+            UPDATE { _key: completed_task.chapter_key } WITH {
+                locked_to: NULL
+            } In Chapters
+            RETURN NEW
+        )[0]
 
-    RETURN {
-    completed_sub_task: completed_sub_task,
-    is_task_completed: is_task_completed,
-    completed_task: completed_task,
-    updated_chapter: updated_chapter
-    }
-
-    `, {chapter_key: chapterKey, mcq_key: mcqKey}).toArray()[0]
+        RETURN {
+            completed_sub_task: completed_sub_task,
+            is_task_completed: is_task_completed,
+            completed_task: completed_task,
+            updated_chapter: updated_chapter
+        }`
+    , {chapter_key: chapterKey, mcq_key: mcqKey}).toArray()[0]
 
     console.log('complete', completeTaskExecution)
 
@@ -66,50 +65,59 @@ function completedSubTask() {
     LET completed_task = @completed_task
 
     LET next_user_task = (
-    FOR task IN Tasks
-        FILTER task.chapter_key == completed_task.chapter_key AND task.status == 'NOT_YET_ASSIGNED'
-        SORT task._key
-        LIMIT 1
-        RETURN task
+        FOR task IN Tasks
+            FILTER task.chapter_key == completed_task.chapter_key AND task.status == 'NOT_YET_ASSIGNED'
+            SORT task._key
+            LIMIT 1
+            RETURN task
     )[0]
 
     LET need_to_create_subtasks = !IS_NULL(next_user_task)
 
     LET updated_next_user_task = (
-    FILTER need_to_create_subtasks
-    UPDATE next_user_task WITH { status: 'PENDING' } IN Tasks
-    RETURN NEW
+        FILTER need_to_create_subtasks
+        UPDATE next_user_task WITH { status: 'PENDING' } IN Tasks
+        RETURN NEW
     )[0]
 
     LET updated_chapter = (
-    FILTER need_to_create_subtasks
-    UPDATE { _key: completed_task.chapter_key } WITH {
-        locked_to: updated_next_user_task.assigned_to
-    } In Chapters
-    RETURN NEW
+        FILTER need_to_create_subtasks
+        UPDATE { _key: completed_task.chapter_key } WITH {
+            locked_to: updated_next_user_task.assigned_to
+        } In Chapters
+        RETURN NEW
     )[0]
 
     LET next_user_sub_tasks = (
-    FILTER need_to_create_subtasks
-    FOR mcq in Mcqs
-        INSERT {
-            task_key: next_user_task._key,
-            mcq_key: mcq._key,
-            mcq_Id: mcq.mcqId,
-            status: 'PENDING',
-            assigned_time: DATE_ISO8601(DATE_NOW())
-        } IN SubTasks
-        RETURN NEW
+        FILTER need_to_create_subtasks
+        FOR mcq in Mcqs
+            FILTER mcq.chapterId == updated_chapter.chapter_id
+            INSERT {
+                task_key: next_user_task._key,
+                mcq_key: mcq._key,
+                mcq_id: mcq.mcqId,
+                status: 'PENDING',
+                assigned_time: DATE_ISO8601(DATE_NOW())
+            } IN SubTasks
+            RETURN NEW
+    )
+
+    LET update_chapter_mcqs = (
+        FILTER need_to_create_subtasks
+        FOR mcq in Mcqs
+            FILTER mcq.chapterId == updated_chapter.chapter_id
+            UPDATE mcq with {
+                status: 'PENDING'
+            } in Mcqs
     )
 
     RETURN {
-    updated_next_user_task: updated_next_user_task,
-    updated_chapter: updated_chapter,
-    need_to_create_subtasks: need_to_create_subtasks,
-    next_user_sub_tasks: next_user_sub_tasks
+        updated_next_user_task: updated_next_user_task,
+        updated_chapter: updated_chapter,
+        need_to_create_subtasks: need_to_create_subtasks,
+        next_user_sub_tasks: next_user_sub_tasks
     } `, {completed_task: completeTaskExecution.completed_task}).toArray()[0]
     if (completeTaskExecution.is_task_completed) return assignNextUserExecution
-
     console.log(assignNextUserExecution)
 
     return {

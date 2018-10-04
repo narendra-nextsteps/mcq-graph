@@ -94,7 +94,7 @@ LET next_user_sub_tasks = (
       INSERT {
           task_key: next_user_task._key,
           mcq_key: mcq._key,
-          mcq_Id: mcq.mcqId,
+          mcq_id: mcq.mcqId,
           status: 'PENDING',
           assigned_time: DATE_ISO8601(DATE_NOW())
       } IN SubTasks

@@ -112,14 +112,24 @@ def complete_transaction_function(chapter_key, mcq_key):
     LET next_user_sub_tasks = (
     FILTER need_to_create_subtasks
     FOR mcq in Mcqs
+        FILTER mcq.chapterId == updated_chapter.chapter_id
         INSERT {
             task_key: next_user_task._key,
             mcq_key: mcq._key,
-            mcq_Id: mcq.mcqId,
+            mcq_id: mcq.mcqId,
             status: 'PENDING',
             assigned_time: DATE_ISO8601(DATE_NOW())
         } IN SubTasks
         RETURN NEW
+    )
+
+    LET update_chapter_mcqs = (
+        FILTER need_to_create_subtasks
+        FOR mcq in Mcqs
+        FILTER mcq.chapterId == updated_chapter.chapter_id
+        UPDATE mcq with {
+            status: 'PENDING'
+        } in Mcqs
     )
 
     RETURN {
@@ -161,8 +171,8 @@ def complete_task_query_response(chapter_key, mcq_key):
 
     """
     query_response = _db_objects.graph_db().transaction({
-        "write": ["Tasks", "SubTasks", "CurationConcepts", "Chapters", "Mcqs"],
-        "read": ["Tasks", "SubTasks", "CurationConcepts"]
+        "write": ["Tasks", "SubTasks", "Chapters", "Mcqs"],
+        "read": ["Tasks", "SubTasks"]
     }, complete_transaction_function(chapter_key, mcq_key))
     print(query_response)
     if query_response['error']:
