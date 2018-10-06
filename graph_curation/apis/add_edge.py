@@ -31,7 +31,7 @@ def add_edge_query(edges):
         FOR edge in {edges}
             INSERT edge IN {McqEdges}
     """.format(
-        McqEdges=db_nomenclature.MCQ_EDGE_COLLECTION,
+        McqEdges=db_nomenclature.VIDEO_EDGE_COLLECTION,
         edges=edges
     )
 

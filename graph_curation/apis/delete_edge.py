@@ -33,7 +33,7 @@ def delete_edge_query(edge_id, username):
         edge_id=edge_id,
         username=username,
         time=str(datetime.datetime.utcnow().isoformat()),
-        mcq_edge_collection=db_nomenclature.MCQ_EDGE_COLLECTION
+        mcq_edge_collection=db_nomenclature.VIDEO_EDGE_COLLECTION
     )
 
 

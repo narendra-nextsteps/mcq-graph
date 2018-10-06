@@ -9,14 +9,14 @@ def db_init():
     CONNECTION.createDatabase(name=_db_nomenclature.DATABASE)
     graph_db = CONNECTION[_db_nomenclature.DATABASE]
     graph_db.createCollection(name=_db_nomenclature.CHAPTER_COLLECTION)
-    graph_db.createCollection(name=_db_nomenclature.CONCEPT_COLLECTION)
     graph_db.createCollection(name=_db_nomenclature.TASK_COLLECTION)
     graph_db.createCollection(name=_db_nomenclature.SUBTASK_COLLECTION)
     graph_db.createCollection(name=_db_nomenclature.USER_COLLECTION)
     graph_db.createCollection(
-        name=_db_nomenclature.CURATION_CONCEPTS_COLLETION
+        name=_db_nomenclature.CHAPTER_CONCEPT_COLLECTION
     )
-    graph_db.createCollection(name=_db_nomenclature.CONCEPT_EDGE_COLLECTION)
+    graph_db.createCollection(name=_db_nomenclature.VIDEO_EDGE_COLLECTION)
+    graph_db.createCollection(name=_db_nomenclature.VIDEOS_COLLECTION)
     graph_db.createCollection(name=_db_nomenclature.REVOKED_TOKEN_COLLECTION)
 
 

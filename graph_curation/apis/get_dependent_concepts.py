@@ -27,7 +27,7 @@ def dependent_concepts_query(concept_id, mcq_id):
             AND edge._from == "{fromNode}"
             RETURN edge
     """.format(
-        McqEdges=db_nomenclature.MCQ_EDGE_COLLECTION,
+        McqEdges=db_nomenclature.VIDEO_EDGE_COLLECTION,
         mcqId=mcq_id,
         fromNode=concept_id
     )

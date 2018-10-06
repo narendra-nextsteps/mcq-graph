@@ -92,7 +92,7 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
         chapter_key=chapter_key,
         sub_task_collection=_db_nomenclature.SUBTASK_COLLECTION,
         chapter_collection=_db_nomenclature.CHAPTER_COLLECTION,
-        mcqs_collection=_db_nomenclature.MCQS_COLLECTION,
+        mcqs_collection=_db_nomenclature.VIDEOS_COLLECTION,
         task_collection=_db_nomenclature.TASK_COLLECTION
     )
 

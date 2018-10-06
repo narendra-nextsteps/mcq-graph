@@ -1,0 +1,6 @@
+[2018-10-03 12:05:13,626][ERROR][assign_task.py:30] In API calling assign_task_query_response
+[2018-10-03 15:32:26,619][ERROR][assign_task.py:30] In API calling assign_task_query_response
+[2018-10-03 15:32:43,663][ERROR][assign_task.py:30] In API calling assign_task_query_response
+[2018-10-03 17:33:14,186][ERROR][flask_request_response.py:30] Unable to parse the given text: b'' in /get-tasks-by-chapter/GET
+[2018-10-03 18:42:31,448][ERROR][assign_task.py:30] In API calling assign_task_query_response
+[2018-10-03 19:42:05,976][ERROR][assign_task.py:30] In API calling assign_task_query_response

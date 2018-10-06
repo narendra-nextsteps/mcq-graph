@@ -26,7 +26,7 @@ def sub_task_data_query(chapter_id):
         }}
         """.format(
             chapter_id=chapter_id,
-            McqsTable=db_nomenclature.MCQS_COLLECTION
+            McqsTable=db_nomenclature.VIDEOS_COLLECTION
         )
 
 
