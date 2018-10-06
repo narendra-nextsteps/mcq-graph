@@ -6,6 +6,9 @@ clean:
 gen-proto:
 	protoc --python_out='.' ./graph_curation/protos/*.proto
 
+init-db:
+	python3 -m graph_curation.db.main
+
 interactive:
 	venv/bin/pip install bpython ipython pylint pep8 flake8 pydocstyle rope
 
