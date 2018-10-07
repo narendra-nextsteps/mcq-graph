@@ -56,32 +56,32 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
 
     LET need_to_create_subtasks = !is_previously_locked
 
-    LET mcqs = (
+    LET videos = (
         FILTER need_to_create_subtasks
-        FOR mcq in {mcqs_collection}
-            FILTER chapter_doc.chapter_id == mcq.chapterId
-            RETURN mcq
+        FOR video in {videos_collection}
+            FILTER chapter_doc.chapter_id == video.chapter_id
+            RETURN video
     )
 
     LET sub_tasks = (
         FILTER need_to_create_subtasks
-        FOR mcq in mcqs
+        FOR video in videos
             INSERT {{
                 task_key: tasks[0]._key,
-                mcq_key: mcq._key,
-                mcq_id: mcq.mcqId,
+                video_key: video._key,
+                video_id: video.video_id,
                 status: 'PENDING',
                 assigned_time: DATE_ISO8601(DATE_NOW())
             }} IN {sub_task_collection}
             RETURN NEW
     )
 
-    LET update_mcq = (
+    LET update_video = (
         FILTER need_to_create_subtasks
-        FOR mcq in mcqs
-            UPDATE mcq with {{
+        FOR video in videos
+            UPDATE video with {{
                 status: "PENDING"
-            }} IN {mcqs_collection}
+            }} IN {videos_collection}
     )
 
     RETURN {{
@@ -92,7 +92,7 @@ def assign_task_query(assigned_by, assigned_to_list, chapter_key):
         chapter_key=chapter_key,
         sub_task_collection=_db_nomenclature.SUBTASK_COLLECTION,
         chapter_collection=_db_nomenclature.CHAPTER_COLLECTION,
-        mcqs_collection=_db_nomenclature.VIDEOS_COLLECTION,
+        videos_collection=_db_nomenclature.VIDEOS_COLLECTION,
         task_collection=_db_nomenclature.TASK_COLLECTION
     )
 
