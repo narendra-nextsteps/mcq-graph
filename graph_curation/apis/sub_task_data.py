@@ -15,18 +15,18 @@ def sub_task_data_query(chapter_id):
     """
     return """
         LET chapter_id = "{chapter_id}"
-        LET mcqs = (
-            FOR mcq IN {McqsTable}
-                FILTER mcq.chapterId == chapter_id
-                RETURN mcq
+        LET videos = (
+            FOR video IN {videos_collection}
+                FILTER video.chapter_id == chapter_id
+                RETURN video
         )
         RETURN {{
-            mcqs: mcqs,
+            videos: videos,
             is_successful_execution: True
         }}
         """.format(
             chapter_id=chapter_id,
-            McqsTable=db_nomenclature.VIDEOS_COLLECTION
+            videos_collection=db_nomenclature.VIDEOS_COLLECTION
         )
 
 
