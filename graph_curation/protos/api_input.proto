@@ -73,7 +73,7 @@ message DeleteEdge {
 }
 
 message CurationConceptCompleted {
-    optional string mcq_key = 1;
+    optional string video_key = 1;
     optional string chapter_key = 2;
 
 }
