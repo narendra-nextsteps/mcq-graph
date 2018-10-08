@@ -3,14 +3,14 @@
 from graph_curation.db import db_objects as _db_objects
 
 
-def complete_transaction_function(chapter_key, mcq_key):
+def complete_transaction_function(chapter_key, video_key):
     """Acknowledgement is returned when sub task is completed.
 
      Parameters
      ----------
      chapter_key : string
          which chapter is getting completed
-     mcq_key : string
+     video_key : string
          for which concept key subtask is completed
      Returns
      -------
@@ -21,15 +21,15 @@ def complete_transaction_function(chapter_key, mcq_key):
     return """
     function completedSubTask() {
     let chapterKey = "%s",
-    mcqKey = "%s"
+    videoKey = "%s"
     let db = require('@arangodb').db
     let completeTaskExecution = db._query( `
         LET chapter_key = @chapter_key
-        LET mcq_key = @mcq_key
+        LET video_key = @video_key
 
         LET pending_sub_task = (
         FOR sub_task IN SubTasks
-            FILTER sub_task.mcq_key == mcq_key AND sub_task.status == "PENDING"
+            FILTER sub_task.video_key == video_key AND sub_task.status == "PENDING"
             RETURN sub_task
         )[0]
 
@@ -40,11 +40,11 @@ def complete_transaction_function(chapter_key, mcq_key):
             RETURN num_pending_sub_tasks
         )[0]
 
-        LET update_mcq = (
-        LET doc = DOCUMENT(CONCAT("Mcqs/", mcq_key))
+        LET update_video = (
+        LET doc = DOCUMENT(CONCAT("Videos/", video_key))
         UPDATE doc WITH {
             status: "COMPLETED"
-        } IN Mcqs
+        } IN Videos
         )
 
         LET completed_sub_task = (
@@ -78,7 +78,7 @@ def complete_transaction_function(chapter_key, mcq_key):
         completed_task: completed_task,
         updated_chapter: updated_chapter
         }`
-    , {chapter_key: chapterKey, mcq_key: mcqKey}).toArray()[0]
+    , {chapter_key: chapterKey, video_key: videoKey}).toArray()[0]
 
     console.log('complete', completeTaskExecution)
 
@@ -111,25 +111,25 @@ def complete_transaction_function(chapter_key, mcq_key):
 
     LET next_user_sub_tasks = (
     FILTER need_to_create_subtasks
-    FOR mcq in Mcqs
-        FILTER mcq.chapterId == updated_chapter.chapter_id
+    FOR video in Videos
+        FILTER video.chapterId == updated_chapter.chapter_id
         INSERT {
             task_key: next_user_task._key,
-            mcq_key: mcq._key,
-            mcq_id: mcq.mcqId,
+            video_key: video._key,
+            video_id: video.videoId,
             status: 'PENDING',
             assigned_time: DATE_ISO8601(DATE_NOW())
         } IN SubTasks
         RETURN NEW
     )
 
-    LET update_chapter_mcqs = (
+    LET update_chapter_videos = (
         FILTER need_to_create_subtasks
-        FOR mcq in Mcqs
-        FILTER mcq.chapterId == updated_chapter.chapter_id
-        UPDATE mcq with {
+        FOR video in Videos
+        FILTER video.chapterId == updated_chapter.chapter_id
+        UPDATE video with {
             status: 'PENDING'
-        } in Mcqs
+        } in Videos
     )
 
     RETURN {
@@ -152,17 +152,17 @@ def complete_transaction_function(chapter_key, mcq_key):
         newly_locked_concepts: assignNextUserExecution.newly_locked_concepts,
         is_successful_execution: true
     }
-}""" % (chapter_key, mcq_key)
+}""" % (chapter_key, video_key)
 
 
-def complete_task_query_response(chapter_key, mcq_key):
+def complete_task_query_response(chapter_key, video_key):
     """Complete task query response.
 
     Parameters
     ----------
     chapter_key : string
         which chapter is getting completed
-    mcq_key : string
+    video_key : string
         for which concept key subtask is completed
 
     Returns
@@ -171,9 +171,9 @@ def complete_task_query_response(chapter_key, mcq_key):
 
     """
     query_response = _db_objects.graph_db().transaction({
-        "write": ["Tasks", "SubTasks", "Chapters", "Mcqs"],
+        "write": ["Tasks", "SubTasks", "Chapters", "Videos"],
         "read": ["Tasks", "SubTasks"]
-    }, complete_transaction_function(chapter_key, mcq_key))
+    }, complete_transaction_function(chapter_key, video_key))
     print(query_response)
     if query_response['error']:
         return {"is_successful_execution": False}

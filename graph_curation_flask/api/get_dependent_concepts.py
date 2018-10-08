@@ -32,7 +32,7 @@ class GetDependentConcepts(_Resource):
             )
         try:
             dependent_concepts_response = dependent_concepts_query_response(
-                request.concept_id, request.mcq_id
+                request.concept_id, request.video_id
             )
             response = _api_output_pb2.GetDependentConcepts()
             dependent_concepts_result = _json_format.ParseDict(

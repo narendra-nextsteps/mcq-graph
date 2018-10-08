@@ -30,7 +30,7 @@ class CurationConceptCompleteData(_Resource):
             )
         try:
             concept_response = complete_task_query_response(
-                    request.chapter_key, request.mcq_key
+                    request.chapter_key, request.video_key
             )
             return flask_request_response.json_response(
                 concept_response,
