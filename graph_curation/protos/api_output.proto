@@ -130,27 +130,14 @@ message SubTaskData {
         optional string id = 1;
         optional string name = 2;
     }
-    message Srt {
-        optional string chapter = 1;
-        optional string class = 2;
-        optional string subject = 3;
-        optional string text = 4;
-        optional string start_time = 5;
-        optional string end_time = 6;
-        optional string video_name = 7;
-        repeated Concept dominant_concepts = 8;
-        repeated Concept non_dominant_concepts = 9;
+    message TextConcepts {
+        optional string context_id = 1;
+        repeated Concept dominant_concepts = 2;
+        repeated Concept non_dominant_concepts = 3;
     }
-    message Video {
-        optional string video_id = 1;
-        optional int32 chapter_id = 2;
-        repeated Srt srt = 3;
-        optional string _key = 4;
-        optional string _id = 5;
-        optional string _rev = 6;
-        optional string status = 7;
-    }
-    repeated Video videos = 1;
+    optional string _key = 1;
+    optional string clean_text = 2;
+    optional TextConcepts concepts = 3;
     optional bool is_successful_execution = 30;
     repeated string execution_error_messages = 31;
 }
@@ -160,7 +147,7 @@ message GetDependentConcepts {
         optional string _key = 1;
         optional string _from = 2;
         optional string _to = 3;
-        optional string video_id = 4;
+        optional string context_id = 4;
         optional string to_concept_name = 5;
         optional string to_concept_id = 6;
         optional string deleted_by = 7;

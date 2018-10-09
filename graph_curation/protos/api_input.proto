@@ -50,7 +50,7 @@ message SubTaskData {
 
 message GetDependentConcepts {
     required string concept_id = 1;
-    required string video_id = 2;
+    required string context_id = 2;
 }
 
 message AddEdge {
@@ -62,7 +62,7 @@ message AddEdge {
         optional string created_time = 5;
         optional string to_concept_name = 6;
         optional string to_concept_id = 7;
-        optional string video_id = 8;
+        optional string context_id = 8;
     }
     repeated Edge edges = 1;
 }
@@ -73,7 +73,7 @@ message DeleteEdge {
 }
 
 message CurationConceptCompleted {
-    optional string video_key = 1;
+    optional string context_key = 1;
     optional string chapter_key = 2;
 
 }

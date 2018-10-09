@@ -29,9 +29,9 @@ def add_edge_query(edges):
     """
     return """
         FOR edge in {edges}
-            INSERT edge IN {McqEdges}
+            INSERT edge IN {TextEdgeCollection}
     """.format(
-        McqEdges=db_nomenclature.VIDEO_EDGE_COLLECTION,
+        TextEdgeCollection=db_nomenclature.TEXT_EDGE_COLLECTION,
         edges=edges
     )
 

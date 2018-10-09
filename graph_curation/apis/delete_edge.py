@@ -24,16 +24,16 @@ def delete_edge_query(edge_id, username):
 
     """
     return """
-    LET doc = DOCUMENT("{mcq_edge_collection}/{edge_id}")
+    LET doc = DOCUMENT("{text_edge_collection}/{edge_id}")
     UPDATE doc WITH {{
         "deleted_time": "{username}",
         "deleted_by": "{time}"
-    }} IN {mcq_edge_collection}
+    }} IN {text_edge_collection}
     """.format(
         edge_id=edge_id,
         username=username,
         time=str(datetime.datetime.utcnow().isoformat()),
-        mcq_edge_collection=db_nomenclature.VIDEO_EDGE_COLLECTION
+        text_edge_collection=db_nomenclature.TEXT_EDGE_COLLECTION
     )
 
 
