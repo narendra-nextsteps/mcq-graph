@@ -45,7 +45,7 @@ message TaskData {
 }
 
 message SubTaskData {
-    required string chapter_id = 1;
+    required string context_id = 1;
 }
 
 message GetDependentConcepts {

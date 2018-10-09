@@ -5,7 +5,7 @@ from google.protobuf import json_format as _json_format
 from graph_curation_flask import flask_request_response
 from graph_curation.protos import api_input_pb2 as _api_input_pb2
 from graph_curation.protos import api_output_pb2 as _api_output_pb2
-from graph_curation.apis.task_data import task_data_query_response
+from graph_curation.apis.task_data_new import task_data_query_response
 
 POST_REQUEST = "POST"
 TASK_DATA_API = "/task-data"
@@ -29,7 +29,7 @@ class TaskData(_Resource):
             )
         try:
             task_data_response = task_data_query_response(request.username)
-            response = _api_output_pb2.TaskData()
+            response = _api_output_pb2.TextContent()
             task_data_result = _json_format.ParseDict(
                 task_data_response, response
             )

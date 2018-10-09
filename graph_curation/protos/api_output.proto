@@ -189,6 +189,49 @@ message DeleteEge {
     repeated string execution_error_messages = 31;
 }
 
+message TextContent {
+    message Context {
+        optional string context_id = 1;
+        optional string raw_text = 2;
+        optional string type = 3;
+    }
+
+    message SubTopic {
+        optional string name = 1;
+        repeated Context contexts = 2;
+    }
+
+    message Topic {
+        optional string name = 1;
+        repeated SubTopic sub_topics = 2;
+        repeated Context contexts = 3;
+    }
+
+    message SubChapter {
+        optional string name = 1;
+        repeated Topic topics = 2;
+        repeated Context contexts = 3;
+    }
+
+    message Chapter {
+        optional string name = 1;
+        repeated SubChapter sub_chapters = 2;
+        repeated Context contexts = 3;
+    }
+
+    message Subject {
+        optional string name = 1;
+        repeated Chapter chapters = 2;
+    }
+
+    message Standard {
+        optional string standard = 1;
+        repeated Subject subjects = 2;
+    }
+
+    repeated Standard standards = 1;
+}
+
 
 // old --------
 

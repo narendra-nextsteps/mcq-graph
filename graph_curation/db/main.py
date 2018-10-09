@@ -15,8 +15,11 @@ def db_init():
     graph_db.createCollection(
         name=_db_nomenclature.CHAPTER_CONCEPT_COLLECTION
     )
-    graph_db.createCollection(name=_db_nomenclature.VIDEO_EDGE_COLLECTION)
-    graph_db.createCollection(name=_db_nomenclature.VIDEOS_COLLECTION)
+    graph_db.createCollection(
+        name=_db_nomenclature.TEXT_EDGE_COLLECTION,
+        className='Edges'
+    )
+    graph_db.createCollection(name=_db_nomenclature.TEXT_CONTENT_COLLECTION)
     graph_db.createCollection(name=_db_nomenclature.REVOKED_TOKEN_COLLECTION)
 
 

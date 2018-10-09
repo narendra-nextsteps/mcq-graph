@@ -1,6 +1,6 @@
 """All the names of collections and db."""
 
-DATABASE = "video_graph_curation"
+DATABASE = "text_graph_curation"
 
 CHAPTER_COLLECTION = "Chapters"
 
@@ -14,6 +14,6 @@ USER_COLLECTION = "Users"
 
 REVOKED_TOKEN_COLLECTION = "RevokedToken"
 
-VIDEOS_COLLECTION = "Videos"
+TEXT_CONTENT_COLLECTION = "TextContent"
 
-VIDEO_EDGE_COLLECTION = "VideoEdges"
+TEXT_EDGE_COLLECTION = "TextEdges"
