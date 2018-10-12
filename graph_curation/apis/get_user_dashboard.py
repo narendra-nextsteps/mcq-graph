@@ -29,8 +29,10 @@ LET tasks = (
             RETURN {{
                     sub_task_key: sub_task_doc._key,
                     sub_task_status: sub_task_doc.status,
-                    concept_key: sub_task_doc.concept_key,
-                    concept: sub_task_doc.concept_name
+                    mcq_key: sub_task_doc.mcq_key,
+                    mcq_id: sub_task_doc.mcq_id,
+                    completed_time: sub_task_doc.completed_time,
+                    assigned_time: task_doc.assigned_time
             }}
         )
         RETURN {{
@@ -38,7 +40,9 @@ LET tasks = (
             chapter: task_doc.chapter,
             chapter_key: task_doc.chapter_key,
             task_key: task_doc.task_key,
-            task_status: task_doc.status
+            task_status: task_doc.status,
+            assigned_time: task_doc.assigned_time,
+            completed_time: task_doc.completed_time
         }}
 )
 
