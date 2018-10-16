@@ -28,12 +28,14 @@ message ChangePassword {
     optional string user_key = 3;
 }
 
-
-
 message AssignTask {
     optional string assigned_by = 1;
     repeated string assigned_to_list = 2;
     optional string chapter_key = 3;
+}
+
+message NumPendingTasks {
+    optional string username = 1;
 }
 
 message GetUserDashboard {

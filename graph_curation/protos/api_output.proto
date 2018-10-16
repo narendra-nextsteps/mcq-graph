@@ -97,6 +97,11 @@ message GetSubTasks {
     repeated string execution_error_messages = 31;
 }
 
+message NumPendingTasks {
+    optional int32 pending_tasks = 1;
+    optional int32 pending_sub_tasks = 2;
+}
+
 message GetUserDashboard {
     message TaskReport {
         optional string task_key = 1;

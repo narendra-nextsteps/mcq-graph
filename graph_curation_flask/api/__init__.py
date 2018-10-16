@@ -9,7 +9,8 @@ from . import \
     get_all_users, assign_task, \
     login, logout, get_refresh_token, delete_user, \
     abort_task, get_assignment_data, task_data, sub_task_data, \
-    get_dependent_concepts, add_edge, delete_edge, get_tasks_by_chapter
+    get_dependent_concepts, add_edge, delete_edge, get_tasks_by_chapter, \
+    num_pending_tasks
 
 from flask_jwt_extended import JWTManager
 
@@ -72,6 +73,11 @@ API.add_resource(
 API.add_resource(
     delete_edge.DeleteEdge,
     delete_edge.DELETE_EDGE_API
+)
+
+API.add_resource(
+    num_pending_tasks.PendingTasks,
+    num_pending_tasks.PENDING_TASKS_API
 )
 
 API.add_resource(
